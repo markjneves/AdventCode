@@ -39,7 +39,7 @@ namespace AdventCode
             else if (end == 0)
                 int_ZeroPasses++;
 
-            //int int_ZeroPasses = 0;
+            /*int int_ZeroPasses = 0;
             //while (end < 0)
             //{
             //    end += int_Digit_Max;
@@ -56,9 +56,10 @@ namespace AdventCode
             //{
             //    end -= int_Digit_Max;
             //    int_ZeroPasses++;
-            //}
+            }*/
 
             return int_ZeroPasses;
+
         }
         public void Rotate(string str_Rotation)
         {
