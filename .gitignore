@@ -3,6 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+## Advent Input/output files
+[Ii]nput.txt
+[Oo]utput.txt
+
 # User-specific files
 *.rsuser
 *.suo
