@@ -2,5 +2,5 @@
 using AdventCode;
 
 //Console.WriteLine("Hello, World!");
-Day02.Run();
+Day03.Run();
 Logger.CloseFile();
