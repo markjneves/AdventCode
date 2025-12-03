@@ -11,9 +11,9 @@ namespace AdventCode
         public static void Run()
         {
             Logger.SetFile("C:\\Users\\Mark\\source\\repos\\AdventCode\\AdventCode\\Day03\\output.txt");
-            //Logger.WriteLevel = LogLevel.Info;
-            //Logger.ConsoleLevel = LogLevel.Info;
-            string[] input = File.ReadAllText("C:\\Users\\Mark\\source\\repos\\AdventCode\\AdventCode\\Day03\\test_input.txt").Split('\n');
+            Logger.WriteLevel = LogLevel.Info;
+            Logger.ConsoleLevel = LogLevel.Info;
+            string[] input = File.ReadAllText("C:\\Users\\Mark\\source\\repos\\AdventCode\\AdventCode\\Day03\\input.txt").Split('\n');
 
             foreach (string line in input)
             {

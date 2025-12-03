@@ -39,35 +39,23 @@ namespace AdventCode
             long_BankTotal += line_total;
             return 0;
         }
-        private static List<int> set_list(List<int> list, string str_input, int start)
-        {
-            List<int> new_list = new List<int>();
-            for (int i = 0; i < start; i++)
-            {
-                new_list.Add(list[i]);
-            }
-            for(int i = 0; new_list.Count < 12; i++)
-            {
-                new_list.Add(Convert.ToInt32("0" + str_input[i]));
-            }
-            Logger.Log("New Max: " + String.Join("",new_list), LogLevel.Trace);
 
-            return new_list;
-        }
         public static int NewCheckBank(string input)
         {
             Logger.Log("Line: " + input, LogLevel.Info);
             List<int> max_list = Enumerable.Repeat<int>(0,12).ToList();
-            for (int i = 0; i < input.Length - 12; i++)
+            int max_index = 0;
+            for (int i = 0; i < max_list.Count; i++)
             {
-                int test_int = Convert.ToInt32("0" + input[i]);
-                for(int j = 0; j < max_list.Count; j++)
+                for(int j = max_index; j <= input.Length - max_list.Count + i; j++)
                 {
-                    if (test_int > max_list[j] && i < (input.Length - 12 + j))
+                    int test_value = Convert.ToInt32("0" + input[j]);
+                    if (test_value > max_list[i])
                     {
-                        max_list = set_list(max_list,input.Substring(i),j);
-                        break;
-                    }
+                        Logger.Log(test_value.ToString() + " > " + max_list[i].ToString(), LogLevel.Trace);
+                        max_index = j+1;
+                        max_list[i] = test_value;
+                    }    
                 }
             }
             long line_max = Convert.ToInt64(String.Join("", max_list));
